@@ -17,11 +17,11 @@ namespace MethodOverloading
 
         public static string Add(int x, int y, bool isPlural)
         {
-            if (isPlural && (x + y != 1))
+            if (isPlural && ((x + y) != 1) && (x + y != -1)) 
             {
                 return $"{x + y} dollars";
             }
-            else if (isPlural && (x + y == 1))
+            else if (isPlural && ((x + y == 1) || (x + y) == -1))
             {
                 return $"{x + y} dollar";
             }
@@ -41,7 +41,7 @@ namespace MethodOverloading
         //=============================================================================================================================
         static void Main(string[] args)
         {
-            Console.WriteLine(Add(0, 1, true));
+            Console.WriteLine(Add(4, 4, true));
         }
     }
 }
